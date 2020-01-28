@@ -1,6 +1,6 @@
 Name:           perl-Net-IPv4Addr
 Version:        0.10
-Release:        19%{?dist}
+Release:        20%{?dist}
 Summary:        Perl extension for manipulating IPv4 addresses
 
 Group:          Development/Libraries
@@ -10,7 +10,8 @@ Source0:        http://search.cpan.org/CPAN/authors/id/F/FR/FRAJULAC/Net-IPv4Add
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildArch:      noarch
-BuildRequires:  perl(ExtUtils::MakeMaker), perl(Test::More)
+BuildRequires:  perl(ExtUtils::MakeMaker)
+BuildRequires:  perl-generators
 Requires:  perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Obsoletes: perl-Network-IPv4Addr < 0.10-1
 
@@ -54,6 +55,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Jan 28 2020 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 0.10-20
+- Rebuild for CentOS 8
+
 * Wed Aug 27 2014 Jitka Plesnikova <jplesnik@redhat.com> - 0.10-19
 - Perl 5.20 rebuild
 
